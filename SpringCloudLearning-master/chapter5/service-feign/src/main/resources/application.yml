@@ -1,0 +1,35 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8760/eureka/
+
+spring:
+  application:
+    name: service-feign
+  profiles:
+    active: feign1
+#Feign是自带断路器的它没有默认打开。需要在配置文件中配置打开它
+feign:
+  hystrix:
+    enabled: true
+
+#解决Spring Cloud中Feign/Ribbon第一次请求失败的方法
+hystrix:
+  metrics:
+    polling-interval-ms: 5000
+
+server_client: service-hi
+common:
+  cluster:
+    port1: 8765
+    port2: 8775
+---
+spring:
+  profiles: feign1
+server:
+  port: ${common.cluster.port1}
+---
+spring:
+  profiles: feign2
+server:
+  port: ${common.cluster.port2}
