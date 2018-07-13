@@ -1,6 +1,5 @@
 # Spring Boot基础教程
-本 
-本项目内容为Spring Boot教程程序样例，转载https://github.com/dyc87112/SpringBoot-Learning。
+本项目内容为Spring Boot教程程序样例，转载https://github.com/dyc87112/SpringBoot-Learning
 在原来基础上新增和修改一下新功能
 如您觉得该项目对您有用，欢迎点击右上方的**Star**按钮，给予支持！！
 
